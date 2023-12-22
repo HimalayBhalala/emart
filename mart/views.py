@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from store.models import Product
+from .models import Category
 
 # Create your views here.
 
@@ -11,6 +12,4 @@ def home(request):
     }
     return render(request,'mart/home.html',context)
 
-def store(request):
-    return render(request,'store/store.html')
 
