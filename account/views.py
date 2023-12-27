@@ -101,22 +101,21 @@ def login(request):
                 pass
             auth.login(request,user)
             messages.success(request,"You are now logged in.")
-            url = request.META.get('HTTP_REFERER')
-            try:
-                query = requests.utils.urlparser(url).query
-                print('query -> ',query)
-                print("---------------")
-                #next=/cart/checkout/
-                params = dict(x.split('=') for x in query.split('&'))
-                print('param -> ',params)
-                if 'next' in params:
-                    nextPage = params['next']
-                    return redirect(nextPage)
-            except:
-                pass
+            # url = request.META.get('HTTP_REFERER')
+            # try:
+            #     query = requests.utils.urlparser(url).query
+            #     print('query -> ',query)
+            #     print("---------------")
+            #     #next=/cart/checkout/
+            #     params = dict(x.split('=') for x in query.split('&'))
+            #     print('param -> ',params)
+            #     if 'next' in params:
+            #         nextPage = params['next']
+            #         return redirect(nextPage)
+            # except:
+            #     pass
         else:
             messages.error(request,"Invalid login credentials")
-            return redirect('nextPage')
         
     return render(request,'account/login.html')
 

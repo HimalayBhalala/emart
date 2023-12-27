@@ -1,0 +1,8 @@
+{
+    "react-native-tools.networkInspector.consoleLogsColorTheme": "Light",
+    "workbench.colorTheme": "Default Light Modern",
+    "workbench.preferredDarkColorTheme": "Red",
+    "workbench.preferredHighContrastColorTheme": "Default High Contrast Light",
+    "workbench.preferredHighContrastLightColorTheme": "Red",
+    "workbench.preferredLightColorTheme": "Red"
+}
