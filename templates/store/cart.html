@@ -10,7 +10,6 @@
     
 <section class="section-content padding-y bg">
     <div class="container">
-    <!-- ============================ COMPONENT 1 ================================= -->
         {% if not cart_items %}
             <h1 class="text-center">Your shopping cart is Empty...</h1>
             <br>
@@ -64,8 +63,7 @@
                                     </figcaption>
                                 </figure>
                             </td>
-                            <td> 
-                            <!-- col.// -->
+                            <td>
                                 <div class="col"> 
                                     <div class="input-group input-spinner">
                                         <div class="input-group-prepend">
@@ -75,14 +73,14 @@
                                         <div class="input-group-append">
                                         <a href="{% url 'add_cart' cart_item.product.id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
                                         </div>
-                                    </div> <!-- input-group.// -->
-                                </div> <!-- col.// -->
+                                    </div>
+                                </div>
                             </td>
                             <td> 
                                 <div class="price-wrap"> 
                                     <var class="price">₹{{cart_item.sub_total}}</var> 
                                     <small class="text-muted">₹{{cart_item.product.price}}</small>
-                                </div> <!-- price-wrap .// -->
+                                </div>
                             </td>
                             <td class="text-right"> 
                                 <a href="{% url 'remove_cart_item' cart_item.product_id %}" class="btn btn-danger"> Remove</a>
@@ -91,8 +89,8 @@
                         {% endfor %}
                     </tbody>
                 </table>
-            </div> <!-- card.// -->
-        </aside> <!-- col.// -->
+            </div> 
+        </aside>
         <aside class="col-lg-3">
             <div class="card">
                 <div class="card-body">
@@ -114,15 +112,12 @@
                     </p>
                     <a href="{% url 'checkout' %}" class="btn btn-primary btn-block"> Checkout </a>
                     <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
-                </div> <!-- card-body.// -->
-            </div> <!-- card.// -->
-        </aside> <!-- col.// -->
-    </div> <!-- row.// -->
+                </div> 
+            </div> 
+        </aside>
+    </div>
     {% endif %}
-    <!-- ============================ COMPONENT 1 END .// ================================= -->
-    
-</div> <!-- container .//  -->
+</div>
 </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
     
 {% endblock main_content %}

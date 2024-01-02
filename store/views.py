@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib import messages
 from django.db.models import Q #Q is used for "or" operators for complex query
 from django.http import HttpResponse
-from .models import Category,Product
+from .models import Category,Product,ProductGallary
 from carts.models import CartItem
 from .models import ReviewRating
 from carts.views import _card_id
@@ -53,11 +53,15 @@ def product_detail(request,product_slug,category_slug):
 
     reviews = ReviewRating.objects.filter(product_id=single_product.id,status=True)
     print(reviews)
+
+    product_gallery = ProductGallary.objects.filter(product_id = single_product.id)
+
     context = {
         'single_product' : single_product,
         'in_cart' : in_cart,
         'orderproduct' : orderproduct,
         'reviews' : reviews,
+        'product_gallery':product_gallery,
     }
     return render(request,'store/product_detail.html',context)
 

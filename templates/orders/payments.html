@@ -10,7 +10,6 @@
     
 <section class="section-content padding-y bg">
     <div class="container">
-    <!-- ============================ COMPONENT 1 ================================= -->
     <h4 class="text-center mb-10">Review Your Order and Make Payment</h4>
         <div class="row">
             <aside class="col-lg-6">
@@ -65,7 +64,6 @@
                                     </figure>
                                 </td>
                                 <td> 
-                                <!-- col.// -->
                                     <div class="col"> 
                                         <div class="input-group input-spinner">
                                             <div class="input-group-prepend">
@@ -75,14 +73,14 @@
                                             <div class="input-group-append">
                                             <a href="{% url 'add_cart' cart_item.product.id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
                                             </div>
-                                        </div> <!-- input-group.// -->
-                                    </div> <!-- col.// -->
+                                        </div> 
+                                    </div>
                                 </td>
                                 <td> 
                                     <div class="price-wrap"> 
                                         <var class="price">₹{{cart_item.sub_total}}</var> 
                                         <small class="text-muted">₹{{cart_item.product.price}}</small>
-                                    </div> <!-- price-wrap .// -->
+                                    </div> 
                                 </td>
                                 <td class="text-right"> 
                                     <a href="{% url 'remove_cart_item' cart_item.product_id %}" class="btn btn-danger"> Remove</a>
@@ -93,18 +91,15 @@
                     </table>
                 </div>
             </div>     
-        </aside> <!-- col.// -->
+        </aside>
         <aside class="col-lg-6">
             <div class="card">
                     <button type="submit" name="submit" class="btn btn-primary btn-block">Make Payments</button>
                 </form>
-            </div> <!-- card.// -->
-        </aside> <!-- col.// -->
-    </div> <!-- row.// -->
-    <!-- ============================ COMPONENT 1 END .// ================================= -->
+            </div> 
+        </aside>
+    </div>
     
-</div> <!-- container .//  -->
-</section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
-    
+</div>
+</section>    
 {% endblock main_content %}

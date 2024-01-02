@@ -79,3 +79,13 @@ class ReviewRating(models.Model):
     def __str__(self):
         return self.subject
 
+class ProductGallary(models.Model):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='store/products/',max_length=155)
+
+    class Meta:
+        verbose_name_plural = "productgallary"
+
+    def __str__(self):
+        return self.product.product_name
+    

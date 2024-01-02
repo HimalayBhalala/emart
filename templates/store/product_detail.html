@@ -10,15 +10,22 @@
     
 <section class="section-content padding-y bg">
     <div class="container">
-        <!-- ============================ COMPONENT 1 ================================= -->
         <div class="card">
             <div class="row no-gutters">
                 <aside class="col-md-6">
                     <article class="gallery-wrap"> 
-                        <div class="img-big-wrap">
+                        <div class="img-big-wrap mainImage">
                             <a href="#"><img src="{{single_product.image.url}}"></a>
-                        </div> <!-- img-big-wrap.// -->
-                    </article> <!-- gallery-wrap .end// -->
+                        </div>
+                    </article> 
+                    <ul class="thumb">
+                        <li>
+                            <a href="{{single_product.image.url}}" target="mainImage"><img src="{{single_product.image.url}}" alt="Product Image"></a>
+                            {% for i in product_gallery %}
+                            <a href="{{i.image.url}}" target="mainImage"><img src="{{i.image.url}}" alt="Product Image"></a>
+                            {% endfor %}
+                        </li>
+                    </ul>
                 </aside>
                 <main class="col-md-6 border-left">
                     <form action="{% url 'add_cart' single_product.id %}" method="post">
@@ -50,7 +57,7 @@
                                         {% endfor %}
                                     </select>
                                 </div>
-                            </div> <!-- row.// -->
+                            </div>
                             <div class="row">
                                 <div class="item-option-select">
                                     <h6>Select Size</h6>
@@ -61,7 +68,7 @@
                                         {% endfor %}
                                     </select>
                                 </div>
-                            </div> <!-- row.// -->
+                            </div>
                             <hr>
 
                             {% if single_product.stock <= 0 %}
@@ -69,12 +76,11 @@
                             {% else %}
                                 <button type="submit" class="btn  btn-primary"> <span class="text">Add to Cart</span> <i class="fas fa-shopping-cart"></i>  </button>
                             {% endif %}
-                        </article> <!-- product-info-aside .// -->
+                        </article> 
                     </form>
-                 </main> <!-- col.// -->
-                </div> <!-- row.// -->
-            </div> <!-- card.// -->
-            <!-- ============================ COMPONENT 1 END .// ================================= --> 
+                 </main>
+                </div>
+            </div> 
             <br>
             
             <div class="row">
@@ -154,7 +160,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div> <!-- icontext.// -->
+                            </div> 
                             <div class="mt-3">
                                 <h6>{{ review.subject }}</h6>
                                 <p>
@@ -163,10 +169,9 @@
                             </div>
                         </article>
                     {% endfor %}
-                </div> <!-- col.// -->
-            </div> <!-- row.// -->
-        </div> <!-- container .//  -->
+                </div> 
+            </div> 
+        </div>
     </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
     
     {% endblock main_content %}

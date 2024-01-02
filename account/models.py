@@ -73,6 +73,16 @@ class Account(AbstractBaseUser):
 class UserProfile(models.Model):
     user = models.OneToOneField(Account,on_delete = models.CASCADE)
     address_line1 = models.CharField(max_length=100)
-    address_line2 = models.CharField(max_length=100)
+    address_line2 = models.CharField(max_length=100,null=False)
     profile_picture = models.ImageField(upload_to='userprofile',blank=True)
+    city = models.CharField(max_length=100,default='')
+    state = models.CharField(max_length=100,null=False,default='')
+    country = models.CharField(max_length=100,null=False,default='')
+
+    def __str__(self):
+        return self.user.first_name
+    
+    def Full_address(self):
+        return f"{self.address_line1} {self.address_line2}"
+
     
